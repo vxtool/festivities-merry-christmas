@@ -1,5 +1,5 @@
-::selection {background: rgba(255,255,0,0.5);}
-body {background: #014963;}
+body {background: $base-background-color;}
+
 
 .character {
   margin-top: -130px;
@@ -7,204 +7,226 @@ body {background: #014963;}
   position: absolute;
   left: 50%;
   top: 50%;
+}
 
-  .body {
-    @include x-prefix('animation', bodyLaugh 4s linear infinite);
-    @include x-prefix('transform', translateY(50%));
-    width: 190px;
-    height: 210px;
-    background: #de2f32;
-    position: relative;
+.character-body {
+  @include x-prefix('animation', bodyLaugh 4s linear infinite);
+  @include x-prefix('transform', translateY(50%));
+  width: 190px;
+  height: 180px;
+  background: $character-color-primary;
+  position: relative;
+  border-radius: 50%;
+  top: 0;
+
+  &:before {
+    @extend %pseudo;
+    width: 94%;
+    height: 30px;
+    position: absolute;
+    bottom: 45px;
     border-radius: 50%;
-    top: 0;
-
-    &:before {
-      content: " ";
-      display: inline-block;
-      background: #fff;
-      width: 100%;
-      height: 30px;
-      position: absolute;
-      bottom: 40px;
-      border-radius: 50%;
-      box-shadow: 0px 20px 0 4px #fff;
-    }
+    box-shadow: 0px 10px 0px 9px rgb(0, 0, 0);
+    left: 5px;
   }
 
-  .head {
-    @include x-prefix('animation', headLaugh 4s linear infinite);
-    @include x-prefix('transform', translateX(-50%));
-    z-index: 2;
+  &:after {
+    @extend %pseudo;
+    border: 4px solid #F2D108;
+    height: 25px;
+    width: 40px;
     position: absolute;
-    bottom: 90px;
+    bottom: 17px;
+    border-radius: 5px;
     left: 50%;
-
-    .face {
-      width: 120px;
-      height: 100px;
-      background: #edcab0;
-      background: #f6c9ba;
-      border-radius: 50%;
-      border: 3px solid #f8e7dc;
-    }
+    margin-left: -20px;
+    box-shadow: inset -5px -10px 0 -4px #f2d108;
   }
+}
 
-  .head .face .redhat .redpart {
+// Cabeça
+.character-head {
+  @include x-prefix('animation', headLaugh 4s linear infinite);
+  @include x-prefix('transform', translateX(-50%));
+  z-index: 2;
+  position: absolute;
+  bottom: 90px;
+  left: 50%;
+
+  &:before {
+    @extend %pseudo;
     width: 120px;
-    height: 120px;
-    background: #de2f32;
-    position: absolute;
-    top: -50px;
-    left: 15px;
+    height: 100px;
+    background: $character-skin-color;
     border-radius: 50%;
-    z-index: -1;
+    box-shadow: 0 -15px 0 12px $character-color-secondary;
+  }
+}
 
-    &:before {
-      content: " ";
-      position: absolute;
-      left: 50%;
-      top: 30px;
-      width: 125px;
-      height: 92px;
-      background: #f8e7dc;
-      border-radius: 50px;
-      z-index: 4;
-      box-shadow: 0px 6px 0px 4px rgba(0, 0, 0, 0.1);
-      margin-left: -70px;
+// Gorro
+.bonnet {
+  width: 120px;
+  height: 120px;
+  background: $character-color-primary;
+  position: absolute;
+  top: -50px;
+  left: 15px;
+  border-radius: 50%;
+  z-index: -1;
 
-    }
-
-    &:after {
-      content: " ";
-      width: 40px;
-      height: 60px;
-      border-radius: 50%;
-      box-shadow: 4px 30px 0 4px #de2f32;
-      position: absolute;
-      right: -8px;
-      top: 20px;
-    }
+  &:before {
+    @extend %pseudo;
+    width: 40px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 4px 30px 0 4px $character-color-primary;
+    position: absolute;
+    right: -8px;
+    top: 20px;
   }
 
-  .head .face .redhat .hatball {
+  &:after {
+    @extend %pseudo;
     width: 38px;
     height: 38px;
-    background: #f8e7dc;
+    background: $character-color-secondary;
     border-radius: 50%;
     z-index: 5;
     position: absolute;
-    right: -44px;
-    top: -12px;
+    right: -33px;
+    top: 30px;
     box-shadow: 0px 6px 0px -4px rgba(0, 0, 0, 0.1);
   }
+}
 
-  .head .face .eyes {
-    @include x-prefix('transform', translateX(-50%));
-    position: absolute;
-    left: 50%;
-    top: 40px;
+// Olhos
+.eyes {
+  @include x-prefix('transform', translateX(-50%));
+  position: absolute;
+  left: 50%;
+  top: 40px;
 
-    &:before,
-    &:after {
-      background: #fff;
-      box-shadow: inset -4px -2px 0 5px #000;
-      border-radius: 50%;
-      content: " ";
-      position: absolute;
-      width: 15px;
-      height: 20px;
-      top: 0;
-    }
-
-    &:before {left: -28px;}
-    &:after {right: -28px;}
-  }
-
-  .head .face .beard {
-    @include x-prefix('animation', beardLaugh 4s linear infinite);
-    @include x-prefix('transform', translateX(-50%));
-    width: 170px;
-    height: 68px;
-    box-shadow: 0 32px 0 0 #f8e7dc;
+  &:before,
+  &:after {
+    @extend %pseudo;
+    background: $character-color-secondary;
+    box-shadow: inset -4px -2px 0 5px $character-eyes-color;
     border-radius: 50%;
     position: absolute;
-    top: 50px;
-    left: 50%;
-
-    &:before,
-    &:after {
-      content: " ";
-      width: 80px;
-      height: 80px;
-      background: #f8e7dc;
-      border-radius: 50%;
-      position: absolute;
-      top: 4px;
-    }
-
-    &:before {left: 15px;}
-    &:after {right: 15px;}
-  }
-
-  .head .face .beard .nouse {
-    @include x-prefix('transform', translateX(-50%));
-    width: 25px;
+    width: 15px;
     height: 20px;
-    border-radius: 50%;
-    background: #f6c9ba;
-    position: absolute;
-    z-index: 3;
-    box-shadow: inset -3px -3px 0px #ecbeaf;
-    left: 50%;
     top: 0;
   }
 
-  .head .face .beard .mouth {
-    @include x-prefix('animation', mouthLaugh 4s linear infinite);
-    @include x-prefix('transform', translateX(-50%));
-    background: #a8744f;
-    z-index: 3;
+  &:before {left: -28px;}
+  &:after {right: -28px;}
+}
+
+// Barba
+.beard {
+  @include x-prefix('animation', beardLaugh 4s linear infinite);
+  @include x-prefix('transform', translateX(-50%));
+  width: 170px;
+  height: 68px;
+  box-shadow: 0 32px 0 0 $character-color-secondary;
+  border-radius: 50%;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+
+  &:before,
+  &:after {
+    @extend %pseudo;
+    width: 80px;
+    height: 80px;
+    background: $character-color-secondary;
     position: absolute;
+    top: 12px;
+  }
+
+  &:before {
+    border-radius: 40px 20px;
+    left: 15px;
+  }
+  &:after {
+    border-radius: 20px 40px;
+    right: 15px;
+  }
+}
+
+// Nariz
+.nose {
+  @include x-prefix('transform', translateX(-50%));
+  width: 25px;
+  height: 20px;
+  border-radius: 50%;
+  background: $character-skin-color;
+  position: absolute;
+  z-index: 3;
+  box-shadow: inset -3px -3px 0px $character-skin-darkcolor;
+  left: 50%;
+  top: 0;
+}
+
+// Boca
+.mouth {
+  @include x-prefix('animation', mouthLaugh 4s linear infinite);
+  @include x-prefix('transform', translateX(-50%));
+  background: $character-mouth-color;
+  z-index: 3;
+  position: absolute;
+  width: 20px;
+  height: 10px;
+  border-bottom-left-radius: 80px 50px;
+  left: 50%;
+  top: 38px;
+}
+
+// Orelhas
+.ears {
+  &:before,
+  &:after {
+    @extend %pseudo;
     width: 20px;
-    height: 10px;
-    border-bottom-left-radius: 80px 50px;
-    left: 50%;
-    top: 38px;
+    height: 30px;
+    border-radius: 50%;
+    background: $character-skin-color;
+    position: absolute;
+    top: 50%;
+    z-index: -1;
   }
 
-  .head .ears {
-    &:before,
-    &:after {
-      content: " ";
-      width: 20px;
-      height: 30px;
-      border-radius: 50%;
-      background: #f6c9ba;
-      position: absolute;
-      top: 50%;
-      z-index: -1;
-    }
-
-    &:before {
-      @include x-prefix('transform', rotate(-10deg));
-      left: -8px;
-    }
-
-    &:after {
-      @include x-prefix('transform', rotate(10deg));
-      right: -8px;
-    }
+  &:before {
+    @include x-prefix('transform', rotate(-10deg));
+    left: -8px;
   }
 
-  .legs {
-    &:before {
-
-    }
-
-    &:after {
-      
-      
-    }
+  &:after {
+    @include x-prefix('transform', rotate(10deg));
+    right: -8px;
   }
-  
+}
+
+// Pernas
+.legs {}
+
+.legs-left {
+  &:before {
+    @extend %pseudo;
+  }
+
+  &:after {
+    @extend %pseudo;      
+  }
+}
+
+.legs-right {
+  &:before {
+    @extend %pseudo;
+  }
+
+  &:after {
+    @extend %pseudo;
+    
+  }
 }
