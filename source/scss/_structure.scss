@@ -1,7 +1,7 @@
 ::selection {background: rgba(255,255,0,0.5);}
 body {background: #014963;}
 
-.santa {
+.character {
   margin-top: -130px;
   margin-left: -95px;
   position: absolute;
@@ -19,16 +19,15 @@ body {background: #014963;}
     top: 0;
 
     &:before {
-      @include x-prefix('transform', translate(-50%, -50%));
       content: " ";
-      width: 7px;
-      height: 7px;
-      background: #f7be10;
-      border-radius: 50%;
+      display: inline-block;
+      background: #fff;
+      width: 100%;
+      height: 30px;
       position: absolute;
-      top: 35%;
-      left: 50%;
-      box-shadow: 0px -18px 0px #f7be10, 0px 18px 0px #f7be10;
+      bottom: 40px;
+      border-radius: 50%;
+      box-shadow: 0px 20px 0 4px #fff;
     }
   }
 
@@ -194,6 +193,17 @@ body {background: #014963;}
     &:after {
       @include x-prefix('transform', rotate(10deg));
       right: -8px;
+    }
+  }
+
+  .legs {
+    &:before {
+
+    }
+
+    &:after {
+      
+      
     }
   }
   
