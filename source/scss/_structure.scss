@@ -1,0 +1,200 @@
+::selection {background: rgba(255,255,0,0.5);}
+body {background: #014963;}
+
+.santa {
+  margin-top: -130px;
+  margin-left: -95px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  .body {
+    @include x-prefix('animation', bodyLaugh 4s linear infinite);
+    @include x-prefix('transform', translateY(50%));
+    width: 190px;
+    height: 210px;
+    background: #de2f32;
+    position: relative;
+    border-radius: 50%;
+    top: 0;
+
+    &:before {
+      @include x-prefix('transform', translate(-50%, -50%));
+      content: " ";
+      width: 7px;
+      height: 7px;
+      background: #f7be10;
+      border-radius: 50%;
+      position: absolute;
+      top: 35%;
+      left: 50%;
+      box-shadow: 0px -18px 0px #f7be10, 0px 18px 0px #f7be10;
+    }
+  }
+
+  .head {
+    @include x-prefix('animation', headLaugh 4s linear infinite);
+    @include x-prefix('transform', translateX(-50%));
+    z-index: 2;
+    position: absolute;
+    bottom: 90px;
+    left: 50%;
+
+    .face {
+      width: 120px;
+      height: 100px;
+      background: #edcab0;
+      background: #f6c9ba;
+      border-radius: 50%;
+      border: 3px solid #f8e7dc;
+    }
+  }
+
+  .head .face .redhat .redpart {
+    width: 120px;
+    height: 120px;
+    background: #de2f32;
+    position: absolute;
+    top: -50px;
+    left: 15px;
+    border-radius: 50%;
+    z-index: -1;
+
+    &:before {
+      content: " ";
+      position: absolute;
+      left: 50%;
+      top: 30px;
+      width: 125px;
+      height: 92px;
+      background: #f8e7dc;
+      border-radius: 50px;
+      z-index: 4;
+      box-shadow: 0px 6px 0px 4px rgba(0, 0, 0, 0.1);
+      margin-left: -70px;
+
+    }
+
+    &:after {
+      content: " ";
+      width: 40px;
+      height: 60px;
+      border-radius: 50%;
+      box-shadow: 4px 30px 0 4px #de2f32;
+      position: absolute;
+      right: -8px;
+      top: 20px;
+    }
+  }
+
+  .head .face .redhat .hatball {
+    width: 38px;
+    height: 38px;
+    background: #f8e7dc;
+    border-radius: 50%;
+    z-index: 5;
+    position: absolute;
+    right: -44px;
+    top: -12px;
+    box-shadow: 0px 6px 0px -4px rgba(0, 0, 0, 0.1);
+  }
+
+  .head .face .eyes {
+    @include x-prefix('transform', translateX(-50%));
+    position: absolute;
+    left: 50%;
+    top: 40px;
+
+    &:before,
+    &:after {
+      background: #fff;
+      box-shadow: inset -4px -2px 0 5px #000;
+      border-radius: 50%;
+      content: " ";
+      position: absolute;
+      width: 15px;
+      height: 20px;
+      top: 0;
+    }
+
+    &:before {left: -28px;}
+    &:after {right: -28px;}
+  }
+
+  .head .face .beard {
+    @include x-prefix('animation', beardLaugh 4s linear infinite);
+    @include x-prefix('transform', translateX(-50%));
+    width: 170px;
+    height: 68px;
+    box-shadow: 0 32px 0 0 #f8e7dc;
+    border-radius: 50%;
+    position: absolute;
+    top: 50px;
+    left: 50%;
+
+    &:before,
+    &:after {
+      content: " ";
+      width: 80px;
+      height: 80px;
+      background: #f8e7dc;
+      border-radius: 50%;
+      position: absolute;
+      top: 4px;
+    }
+
+    &:before {left: 15px;}
+    &:after {right: 15px;}
+  }
+
+  .head .face .beard .nouse {
+    @include x-prefix('transform', translateX(-50%));
+    width: 25px;
+    height: 20px;
+    border-radius: 50%;
+    background: #f6c9ba;
+    position: absolute;
+    z-index: 3;
+    box-shadow: inset -3px -3px 0px #ecbeaf;
+    left: 50%;
+    top: 0;
+  }
+
+  .head .face .beard .mouth {
+    @include x-prefix('animation', mouthLaugh 4s linear infinite);
+    @include x-prefix('transform', translateX(-50%));
+    background: #a8744f;
+    z-index: 3;
+    position: absolute;
+    width: 20px;
+    height: 10px;
+    border-bottom-left-radius: 80px 50px;
+    left: 50%;
+    top: 38px;
+  }
+
+  .head .ears {
+    &:before,
+    &:after {
+      content: " ";
+      width: 20px;
+      height: 30px;
+      border-radius: 50%;
+      background: #f6c9ba;
+      position: absolute;
+      top: 50%;
+      z-index: -1;
+    }
+
+    &:before {
+      @include x-prefix('transform', rotate(-10deg));
+      left: -8px;
+    }
+
+    &:after {
+      @include x-prefix('transform', rotate(10deg));
+      right: -8px;
+    }
+  }
+  
+}
