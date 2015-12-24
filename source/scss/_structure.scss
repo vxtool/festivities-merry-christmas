@@ -1,4 +1,9 @@
-body {background: $base-background-color;}
+body {
+  @include x-prefix('animation', snowBack 20s linear infinite);
+  background-color: $base-background-color;
+  background-image: url('../images/snow.png'), url('../images/snow2.png'), url('../images/snow3.png');
+  overflow: hidden;
+}
 
 audio {display: none;}
 
@@ -8,10 +13,31 @@ audio {display: none;}
   position: absolute;
   left: 50%;
   top: 50%;
+
+  &:before {
+    @extend %pseudo;
+    width: 2000%;
+    background: #022e3e;
+    position: absolute;
+    left: -1000%;
+    height: 1000px;
+    z-index: -1;
+    top: 330px;
+  }
+
+  &:after {
+    @extend %pseudo;
+    width: 220px;
+    height: 20px;
+    position: absolute;
+    bottom: -175px;
+    background: #021b24;
+    border-radius: 50%;
+    z-index: -1;
+  }
 }
 
 .character-body {
-  @include x-prefix('animation', bodyLaugh 4s linear infinite);
   @include x-prefix('transform', translateY(50%));
   width: 190px;
   height: 180px;
@@ -142,7 +168,6 @@ audio {display: none;}
 
 // Barba
 .beard {
-  @include x-prefix('animation', beardLaugh 4s linear infinite);
   @include x-prefix('transform', translateX(-50%));
   width: 170px;
   height: 68px;
