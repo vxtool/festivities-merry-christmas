@@ -1,9 +1,10 @@
 body {background: $base-background-color;}
 
+audio {display: none;}
 
 .character {
   margin-top: -130px;
-  margin-left: -95px;
+  margin-left: -110px;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -316,10 +317,8 @@ body {background: $base-background-color;}
 }
 
 .arms-right {
-  width: 40px;
-  height: 40px;
   border-radius: 50%;
-  background: $character-color-secondary;
+  background: $character-color-primary;
   position: absolute;
   right: -93px;
   z-index: 2;
@@ -334,10 +333,11 @@ body {background: $base-background-color;}
     font-size: 22px;
     padding: 4px;
     background: #385e37;
-    color: #fff;
+    color: #feffbf;
     text-transform: uppercase;
     position: absolute;
     right: -24px;
+    text-shadow: 0 3px 0 #214820;
   }
 
   &:after {
@@ -347,9 +347,9 @@ body {background: $base-background-color;}
     background: $character-color-primary;
     position: absolute;
     top: 0px;
-    left: 54px;
+    left: 15px;
     border-radius: 50%;
-    box-shadow: -2px 1px 0 0 #224421;
+    box-shadow: -2px 1px 0px 0px #224421, inset 3px 0 0 0 #c02023;
   }
 }
 
