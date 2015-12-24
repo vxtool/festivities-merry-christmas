@@ -250,39 +250,161 @@ body {background: $base-background-color;}
   }
 }
 
-.legs-left {
+.arms {
+  width: 40px;
+  height: 74px;
+  background: $character-color-secondary;
+  left: 50%;
   position: absolute;
-  left: 0;
-  bottom: -20px;
+  margin-left: -20px;
+  top: 42px;
 
   &:before {
     @extend %pseudo;
     width: 40px;
     height: 40px;
-    background: $character-color-secondary;
-    border-radius: 50%;
+    border-radius: 40px 0 0 90px;
+    background: $character-color-primary;
+    position: absolute;
+    left: -82px;
   }
 
   &:after {
-    @extend %pseudo;      
+    @extend %pseudo;
+    width: 40px;
+    height: 40px;
+    border-radius: 0 40px 90px 0;
+    background: $character-color-primary;
+    position: absolute;
+    right: -82px;
+  }
+}
+
+.arms-left {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: $character-color-secondary;
+  position: absolute;
+  left: -93px;
+  z-index: 2;
+  top: 5px;
+
+  &:before {
+    @extend %pseudo;
+    width: 12px;
+    height: 15px;
+    background: $character-color-primary;
+    position: absolute;
+    left: 10px;
+    border-radius: 19px;
+    box-shadow: 2px 0 0 0 #c31c1f;
+  }
+
+  &:after {
+    @extend %pseudo;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: $character-color-primary;
+    position: absolute;
+    left: -8px;
+    top: 10px;
+    box-shadow: 3px 0 0 0 #c31c1f;
+    z-index: 2;
+  }
+}
+
+.arms-right {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: $character-color-secondary;
+  position: absolute;
+  right: -93px;
+  z-index: 2;
+  top: 5px;
+
+  &:before {
+    content: "Feliz Natal!";
+    display: inline-block;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    font-family: Arial;
+    font-size: 22px;
+    padding: 4px;
+    background: #385e37;
+    color: #fff;
+    text-transform: uppercase;
+    position: absolute;
+    right: -24px;
+  }
+
+  &:after {
+    @extend %pseudo;
+    width: 20px;
+    height: 40px;
+    background: $character-color-primary;
+    position: absolute;
+    top: 0px;
+    left: 54px;
+    border-radius: 50%;
+    box-shadow: -2px 1px 0 0 #224421;
+  }
+}
+
+.legs-left {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  &:before {
+    @extend %pseudo;
+    width: 40px;
+    height: 40px;
+    background: $character-color-primary;
+    position: absolute;
+    top: -17px;
+    left: 50px;
+  }
+
+  &:after {
+    @extend %pseudo;
+    width: 0;
+    height: 0;
+    border-bottom: 40px solid #000;
+    border-left: 60px solid transparent;
+    position: absolute;
+    top: 10px;
+    left: -10px;
+    box-shadow: 40px 0px 0 0 #000;
   }
 }
 
 .legs-right {
   position: absolute;
   right: 0;
-  bottom: -20px;
+  bottom: 0;
 
   &:before {
     @extend %pseudo;
     width: 40px;
     height: 40px;
-    background: $character-color-secondary;
-    border-radius: 50%;
-    
+    background: $character-color-primary;
+    position: absolute;
+    top: -17px;
+    right: 50px;
   }
 
   &:after {
     @extend %pseudo;
+    width: 0;
+    height: 0;
+    border-bottom: 40px solid #000;
+    border-right: 60px solid transparent;
+    position: absolute;
+    top: 10px;
+    right: -10px;
+    box-shadow: -40px 0px 0 0 #000;
   }
 }
