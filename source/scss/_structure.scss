@@ -21,13 +21,13 @@ body {background: $base-background-color;}
 
   &:before {
     @extend %pseudo;
-    width: 94%;
+    width: 100%;
     height: 30px;
     position: absolute;
-    bottom: 45px;
+    bottom: 63px;
     border-radius: 50%;
-    box-shadow: 0px 10px 0px 9px rgb(0, 0, 0);
-    left: 5px;
+    box-shadow: 0px 10px 0px 9px #000;
+    left: 1px;
   }
 
   &:after {
@@ -36,7 +36,7 @@ body {background: $base-background-color;}
     height: 25px;
     width: 40px;
     position: absolute;
-    bottom: 17px;
+    bottom: 34px;
     border-radius: 5px;
     left: 50%;
     margin-left: -20px;
@@ -63,26 +63,43 @@ body {background: $base-background-color;}
   }
 }
 
+// Rosto (sobrancelhas)
+.face {
+  &:before,
+  &:after {
+    @extend %pseudo;
+    width: 20px;
+    height: 10px;
+    box-shadow: 0 -6px 0 4px $character-color-secondary;
+    border-radius: 50%;
+    position: absolute;
+    top: 32px;
+  }
+
+  &:before {left: 28px;}
+  &:after {right: 28px;}
+}
+
 // Gorro
 .bonnet {
-  width: 120px;
+  width: 130px;
   height: 120px;
   background: $character-color-primary;
   position: absolute;
   top: -50px;
-  left: 15px;
+  left: 0;
   border-radius: 50%;
   z-index: -1;
 
   &:before {
     @extend %pseudo;
-    width: 40px;
-    height: 60px;
+    width: 71px;
+    height: 49px;
     border-radius: 50%;
-    box-shadow: 4px 30px 0 4px $character-color-primary;
+    box-shadow: -30px 27px 0 4px $character-color-primary;
     position: absolute;
-    right: -8px;
-    top: 20px;
+    right: -58px;
+    top: 1px;
   }
 
   &:after {
@@ -93,8 +110,8 @@ body {background: $base-background-color;}
     border-radius: 50%;
     z-index: 5;
     position: absolute;
-    right: -33px;
-    top: 30px;
+    right: -58px;
+    top: 25px;
     box-shadow: 0px 6px 0px -4px rgba(0, 0, 0, 0.1);
   }
 }
@@ -134,23 +151,27 @@ body {background: $base-background-color;}
   top: 50px;
   left: 50%;
 
-  &:before,
-  &:after {
+  &:before {
     @extend %pseudo;
-    width: 80px;
     height: 80px;
     background: $character-color-secondary;
     position: absolute;
     top: 12px;
+    width: 140px;
+    left: 15px;
+    border-radius: 30px;
   }
 
-  &:before {
-    border-radius: 40px 20px;
-    left: 15px;
-  }
   &:after {
-    border-radius: 20px 40px;
-    right: 15px;
+    @extend %pseudo;
+    right: 26px;
+    position: absolute;
+    border-radius: 50%;
+    z-index: 2;
+    height: 20px;
+    top: -4px;
+    width: 118px;
+    box-shadow: 0 8px 0 7px $character-color-secondary;
   }
 }
 
@@ -178,8 +199,8 @@ body {background: $base-background-color;}
   width: 20px;
   height: 10px;
   border-bottom-left-radius: 80px 50px;
-  left: 50%;
-  top: 38px;
+  left: 56%;
+  top: 35px;
 }
 
 // Orelhas
@@ -208,11 +229,38 @@ body {background: $base-background-color;}
 }
 
 // Pernas
-.legs {}
+.legs {
+  border-radius: 50%;
+  background: $character-color-primary;
+  height: 150px;
+  position: absolute;
+  z-index: -1;
+  bottom: -30px;
+  width: 100%;
 
-.legs-left {
   &:before {
     @extend %pseudo;
+    width: 214px;
+    box-shadow: 0 32px 0 0 $character-color-secondary;
+    border-radius: 50%;
+    height: 72px;
+    top: 11px;
+    position: absolute;
+    left: -12px;    
+  }
+}
+
+.legs-left {
+  position: absolute;
+  left: 0;
+  bottom: -20px;
+
+  &:before {
+    @extend %pseudo;
+    width: 40px;
+    height: 40px;
+    background: $character-color-secondary;
+    border-radius: 50%;
   }
 
   &:after {
@@ -221,12 +269,20 @@ body {background: $base-background-color;}
 }
 
 .legs-right {
+  position: absolute;
+  right: 0;
+  bottom: -20px;
+
   &:before {
     @extend %pseudo;
+    width: 40px;
+    height: 40px;
+    background: $character-color-secondary;
+    border-radius: 50%;
+    
   }
 
   &:after {
     @extend %pseudo;
-    
   }
 }
