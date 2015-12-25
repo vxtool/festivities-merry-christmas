@@ -5,8 +5,6 @@ body {
   overflow: hidden;
 }
 
-audio {display: none;}
-
 .character {
   margin-top: -130px;
   margin-left: -110px;
@@ -217,7 +215,7 @@ audio {display: none;}
 
 // Boca
 .mouth {
-  @include x-prefix('animation', mouthLaugh 4s linear infinite);
+  @include x-prefix('animation', mouthLaugh 2s linear infinite);
   @include x-prefix('transform', translateX(-50%));
   background: $character-mouth-color;
   z-index: 3;
