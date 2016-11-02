@@ -1,7 +1,7 @@
 # Merry Christmas
 
 [![licence mit](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](http://hemersonvianna.mit-license.org/)
-[![issues](https://img.shields.io/github/issues/hemersonvianna/merry-christmas.svg?style=flat-square)](https://github.com/hemersonvianna/merry-christmas/issues)
+[![issues](https://img.shields.io/github/issues/festivities-solutions/merry-christmas.svg?style=flat-square)](https://github.com/festivities-solutions/merry-christmas/issues)
 
 ## Summary
 
@@ -24,7 +24,7 @@ npm install
 
 ## Log
 
-Check [Releases](https://github.com/hemersonvianna/merry-christmas/releases) for detailed changelog.
+Check [Releases](https://github.com/festivities-solutions/merry-christmas/releases) for detailed changelog.
 
 ## License
 
