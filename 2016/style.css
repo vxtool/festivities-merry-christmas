@@ -1,0 +1,16 @@
+body {
+  background-color: #ccc;
+  font-size: 16px;
+  font-family: 'Open Sans', Helvetica, Helvetica Neue, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+.wrapper {
+  margin: 80px auto 0 auto;
+  position: relative;
+  width: 600px;
+  z-index: 1;
+}
+
+#xmas { width: 600px; }
+.box { cursor: pointer; }
