@@ -1,7 +1,11 @@
 # Merry Christmas
 
 [![licence mit](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](http://hemersonvianna.mit-license.org/)
-[![issues](https://img.shields.io/github/issues/festivities-solutions/merry-christmas.svg?style=flat-square)](https://github.com/festivities-solutions/merry-christmas/issues)
+[![GitHub issues](https://img.shields.io/github/issues/org-victorinox/festivities-merry-christmas.svg)](https://github.com/org-victorinox/festivities-merry-christmas/issues)
+![GitHub Release Date](https://img.shields.io/github/release-date/org-victorinox/festivities-merry-christmas.svg)
+![GitHub top language](https://img.shields.io/github/languages/top/org-victorinox/festivities-merry-christmas.svg)
+![GitHub repo size](https://img.shields.io/github/repo-size/org-victorinox/festivities-merry-christmas.svg)
+![GitHub All Releases](https://img.shields.io/github/downloads/org-victorinox/festivities-merry-christmas/total.svg)
 
 ## Summary
 
@@ -24,7 +28,7 @@ npm install
 
 ## Log
 
-Check [Releases](https://github.com/festivities-solutions/merry-christmas/releases) for detailed changelog.
+Check [Releases](https://github.com/org-victorinox/festivities-merry-christmas/releases) for detailed changelog.
 
 ## License
 
